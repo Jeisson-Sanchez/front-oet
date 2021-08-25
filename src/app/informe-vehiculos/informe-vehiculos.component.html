@@ -1,0 +1,24 @@
+<h2 align="center">Informe de vehículos</h2>
+<br>
+<div class="card-body">
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Placa</th>
+        <th scope="col">Color</th>
+        <th scope="col">Tipo vehículo</th>
+        <th scope="col">Conductor</th>
+        <th scope="col">Propietario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of vehiculos">
+        <td>{{item.placa}}</td>
+        <td>{{item.color}}</td>
+        <td>{{item.tipo_vehiculo?.tipo}}</td>
+        <td>{{item.conductor?.primer_nombre}} {{item.conductor?.segundo_nombre}} {{item.conductor?.apellidos}}</td>
+        <td>{{item.propietario?.primer_nombre}} {{item.propietario?.segundo_nombre}} {{item.propietario?.apellidos}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

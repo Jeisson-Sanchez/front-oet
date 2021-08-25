@@ -11,6 +11,15 @@ export class VehiculosService {
   API_ENDPONIT = "http://127.0.0.1:8000/api";
 
   constructor(private http: HttpClient) { }
+  
+  /**
+   * @author Jeisson Sanchez
+   * Metodo que trae todos los vehiculos
+   */
+  index(){
+    const path = this.API_ENDPONIT + '/vehiculo';
+    return this.http.get<Vehiculo[]>(path);
+  }
 
   /** 
    * @author Jeisson Sanchez

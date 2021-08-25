@@ -9,4 +9,9 @@ export interface Persona {
     ciudad?: string;
     id_clasificacion?: string;
     estado?: string;
+    /** relacion con clasificacion */
+    clasificacion?: {
+        id?: string;
+        clasificacion?: string;
+    }
 }
