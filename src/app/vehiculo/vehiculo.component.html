@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="card mb-3">
+      <div class="card-header">
+        Registrar vehículo
+      </div>
+      <div class="card-body">
+        <!-- <form action="" method="POST"> -->
+          <div class="mb-3 row">
+            <label for="" class="col-sm-3 col-form-label">Placa</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="placa" [(ngModel)]="vehiculo.placa" required>
+            </div>
+            <label for="" class="col-sm-3 col-form-label">Color</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="color" [(ngModel)]="vehiculo.color" required>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="" class="col-sm-3 col-form-label">Marca</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="marca" [(ngModel)]="vehiculo.marca" required>
+            </div>
+            <label for="" class="col-sm-3 col-form-label">Tipo de vehiculo</label>
+            <div class="col-sm-3" >
+                <select class="form-control" [(ngModel)]="vehiculo.id_tipo_vehiculo">
+                    <option selected>Seleccionar..</option>
+                    <option *ngFor="let item of tipoVehiculos" value="{{item.id}}">{{item.tipo}}</option>
+                </select>
+            </div>
+          </div>
+          <br>
+          <div class="mb-3 row">
+            <label for="" class="col-sm-5 col-form-label">¿El conductor y el propietario son la misma persona?</label>
+            <div class="col-sm-3">
+              <button class="btn btn-outline-success form-control mb-4" (click)="estadoClasificacion(3)">Si</button>
+            </div>
+            <div class="col-sm-3">
+                <button class="btn btn-outline-danger form-control mb-4" (click)="estadoClasificacion(1)">No</button>
+              </div>
+          </div>
+
+          <div class="mb-3 row" *ngIf="sconductor == true">
+            <label for="" class="col-sm-3 col-form-label">Conductor</label>
+            <div class="col-sm-3" >
+                <select class="form-control" [(ngModel)]="vehiculo.id_conductor">
+                    <option selected>Seleccionar..</option>
+                    <option *ngFor="let item of dataConductor" value="{{item.id}}">{{item.primer_nombre}} {{item.segundo_nombre}} {{item.apellidos}}</option>
+                </select>
+            </div> 
+            <label for="" class="col-sm-3 col-form-label">Propietario</label>
+            <div class="col-sm-3" >
+                <select class="form-control" [(ngModel)]="vehiculo.id_propietario">
+                    <option selected>Seleccionar..</option>
+                    <option *ngFor="let item of dataPropietario" value="{{item.id}}">{{item.primer_nombre}} {{item.segundo_nombre}} {{item.apellidos}}</option>
+                </select>
+            </div>  
+            <div class="col-sm-12" >
+                <br><br>
+                <button class="btn btn-outline-success form-control mb-12" (click)="strore()">Guardar</button>
+            </div> 
+          </div>
+
+          <div class="mb-3 row" *ngIf="sconductorPropietario == true">
+            <label for="" class="col-sm-3 col-form-label">Conductor y propietario</label>
+            <div class="col-sm-3" >
+                <select class="form-control" [(ngModel)]="vehiculo.id_propietario" [(ngModel)]="vehiculo.id_conductor">
+                    <option selected>Seleccionar..</option>
+                    <option *ngFor="let item of dataConductorPropietario" value="{{item.id}}">{{item.primer_nombre}} {{item.segundo_nombre}} {{item.apellidos}}</option>
+                </select>
+            </div>  
+            <div class="col-sm-6" >
+                <button class="btn btn-outline-success form-control" (click)="strore()">Guardar</button>
+            </div>
+          </div>
+
+
+      </div>
+    </div>
+</div>
