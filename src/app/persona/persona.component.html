@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="card mb-3">
+      <div class="card-header">
+        Registrar persona
+      </div>
+      <div class="card-body">
+          <div class="mb-3 row">
+            <label for="" class="col-sm-3 col-form-label">Número de cédula</label>
+            <div class="col-sm-3">
+              <input type="number" class="form-control" id="n_cedula" [(ngModel)]="persona.n_cedula" required>
+            </div>
+            <label for="" class="col-sm-3 col-form-label">Primer nombre</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="primer_nombre" [(ngModel)]="persona.primer_nombre" required>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="" class="col-sm-3 col-form-label">Segundo nombre</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="segundo_nombre" [(ngModel)]="persona.segundo_nombre" required>
+            </div>
+            <label for="" class="col-sm-3 col-form-label">Apellidos</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="apellidos" [(ngModel)]="persona.apellidos" required>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="" class="col-sm-3 col-form-label">Teléfono</label>
+            <div class="col-sm-3">
+              <input type="number" class="form-control" id="telefono" [(ngModel)]="persona.telefono" required>
+            </div>
+            <label for="" class="col-sm-3 col-form-label">Dirección</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="direccion" [(ngModel)]="persona.direccion" required>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="" class="col-sm-3 col-form-label">Ciudad</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="ciudad" [(ngModel)]="persona.ciudad" required>
+            </div>
+            <label for="" class="col-sm-3 col-form-label">Clasificación</label>
+            <div class="col-sm-3">
+                <select class="form-control" [(ngModel)]="persona.id_clasificacion">
+                    <option selected>Seleccionar..</option>
+                    <option *ngFor="let item of clasificaciones" value="{{item.id}}">{{item.clasificacion}}</option>
+                </select>
+            </div>
+            <div class="mb-12 row">
+                <div class="col-sm-12">
+                    <br>
+                    <button class="btn btn-outline-success form-control mb-12" (click)="store()">Guardar</button>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>

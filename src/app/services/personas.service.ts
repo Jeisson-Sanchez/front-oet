@@ -23,6 +23,11 @@ export class PersonasService {
     return this.http.get<Persona[]>(path);
   }
 
+  store(persona: Persona){
+    const path = this.API_ENDPOINT + '/persona';
+    return this.http.post(path, persona);
+  }
+
   /** 
    * @author Jeisson Sanchez
    * servicio que trae las clasificaciones de una persona
