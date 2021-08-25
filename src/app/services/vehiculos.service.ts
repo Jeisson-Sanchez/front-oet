@@ -12,11 +12,20 @@ export class VehiculosService {
 
   constructor(private http: HttpClient) { }
 
+  /** 
+   * @author Jeisson Sanchez
+   * @param object vehiculo
+   * servicio que registra un vehiculo
+   */
   strore(vehiculo: Vehiculo){
     const path = this.API_ENDPONIT + '/vehiculo';
     return this.http.post(path, vehiculo);
   }
 
+  /** 
+   * @author Jeisson Sanchez
+   * servicio que trae el tipo de vehiculo
+   */
   tipoVehiculo(){
     const path = this.API_ENDPONIT + '/tipoVehiculo';
     return this.http.get<TipoVehiculo[]>(path);

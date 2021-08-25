@@ -8,7 +8,7 @@ import { VehiculoComponent } from './vehiculo/vehiculo.component';
 import { HttpClientModule }from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-
+/** Rutas de navegacion */
 const routes: Route[] = [
   {path: 'vehiculos', component: VehiculoComponent}
 ];
